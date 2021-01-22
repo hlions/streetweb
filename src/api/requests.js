@@ -25,6 +25,7 @@ requests.interceptors.request.use(function (config) {
 requests.interceptors.response.use(function (response) {
     // 对响应数据做点什么
     if (response.statusCode === 401) {
+        localStorage.removeItem('token');
         router.replace('/login');
     }
     return response;

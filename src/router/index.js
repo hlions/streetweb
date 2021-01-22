@@ -9,6 +9,12 @@ const routes = [
     name: "Login",
     component: () =>
       import(/* webpackChunkName: "login" */ "../views/Accounts/Login.vue")
+  },
+  {
+    path: '/layouts',
+    name: 'Layouts',
+    component: () => 
+      import(/* webpackChunkName: "layout" */ "../views/Accounts/Userdetail.vue")
   }
 ];
 
@@ -27,7 +33,7 @@ router.beforeEach((to, form, next) => {
     if (token) {
       next();
     } else {
-      router.push('/login')
+      router.push('/login');
     }
   }
 });

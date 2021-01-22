@@ -41,12 +41,12 @@ export default {
                 data: this.formData
             }).then(response => {
                     // 登录成功提示
-                    this.$notify({title: '登录成功', message: '登录成功', type: 'success'});
+                    this.$notify({title: 'Successfully', message: '欢迎！可以点击头像进行密码修改', type: 'success'});
                     // 在 localStorage 中存入 token
                     const userToken = 'Bearer ' + response.data.data.token;
                     localStorage.setItem('token', userToken);
                     // 跳转至展示首页
-                    this.$router.push('站内页面');
+                    this.$router.push('/layouts');
                 })
                 .catch(error => {
                     console.log(error);
